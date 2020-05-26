@@ -3,11 +3,10 @@
 var inputElementQuery = document.getElementById("name-header15-a");
 var inputElementReply = document.getElementById("email-header15-a");
 var buttonSubmit = document.getElementById("submit-button");
-var MainContainerElement = document.getElementById("header16-3");
+var mainContainerElement = document.getElementById("header16-3");
+
 
 buttonSubmit.onclick = onSubmitQuery;
-
-alert("funcionou");
 
 function onSubmitQuery() {
     if (inputElementQuery.value == "" || inputElementReply == "") {
@@ -24,7 +23,17 @@ function onSubmitQuery() {
                 console.log(response);
                 var repliesList = response.data.body;
                 console.log('DATA[0]: ', repliesList[0]);
-            
+                
+                for (item of repliesList) {
+                    var div = document.createElement('div');
+                    div.innerHTML = item;
+                    mainContainerElement.appendChild(div);
+                    twttr.widgets.load(
+                        document.getElementById("header16-3")
+                      );
+                      
+                }
+
             })
             .catch(function (error) {
                 console.warn(error);
