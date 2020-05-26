@@ -7,6 +7,7 @@ var MainContainerElement = document.getElementById("header16-3");
 
 buttonSubmit.onclick = onSubmitQuery;
 
+alert("funcionou");
 
 function onSubmitQuery() {
     if (inputElementQuery.value == "" || inputElementReply == "") {
