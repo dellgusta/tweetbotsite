@@ -5,9 +5,10 @@ var inputElementReply = document.getElementById("email-header15-a");
 var buttonSubmit = document.getElementById("submit-button");
 var MainContainerElement = document.getElementById("header16-3");
 
-
+alert("COMMIT");
 
 buttonSubmit.onclick = onSubmitQuery;
+
 
 function onSubmitQuery() {
     if (inputElementQuery.value == "" || inputElementReply == "") {
