@@ -1,4 +1,4 @@
-// https://uwcyzuxldg.execute-api.us-east-1.amazonaws.com/Prodction?query=%23test&reply=teste&twtct=2
+// https://xa4i5vqufg.execute-api.us-east-1.amazonaws.com/test
 
 var inputElementQuery = document.getElementById("name-header15-a");
 var inputElementReply = document.getElementById("email-header15-a");
@@ -14,11 +14,17 @@ function onSubmitQuery() {
     } else {
         let query = encodeURIComponent(inputElementQuery.value);
         let reply = encodeURIComponent(inputElementReply.value);
-        let tweetCount = 4;
+        let tweetCount = 10;
 
         console.log(query, reply);
 
-        axios.get(`https://uwcyzuxldg.execute-api.us-east-1.amazonaws.com/Prodction?query=${query}&reply=${reply}&twtct=${tweetCount}`)
+        axios.get(`https://pb6mybcyzc.execute-api.us-east-1.amazonaws.com/test/production?query=${query}&reply=${reply}&twtct=${tweetCount}`, {
+            headers: { 
+                'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept',
+                'Access-Control-Allow-Origin': "*"
+            },
+            crossDomain : true
+        })
             .then(function (response) {
                 console.log(response);
                 var repliesList = response.data.body;
